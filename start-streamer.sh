@@ -16,7 +16,7 @@ function start-server() {
 		echo "vlc is not installed, exiting.."
         exit 1
     fi
-    vlc screen:// --screen-fps=30 --input-slave=alsa:// --live-caching=600 --sout "#transcode{vcodec=mp4v,vb=1500,fps=30,scale=0.25,acodec=mp4a,ab=48,channels=2,samplerate=8000}:http{mux=ts,dst=:${LISTEN_PORT}/}" --sout-keep --sout-avcodec-strict -2
+    vlc screen:// --screen-fps=30 --input-slave=alsa:// --live-caching=6000 --sout "#transcode{vcodec=mp4v,fps=30,scale=0.5,acodec=mp4a,ab=48,channels=2,samplerate=8000}:http{mux=ts,dst=:${LISTEN_PORT}/}" --sout-keep --sout-avcodec-strict -2
 }
 
 # Try 3 different port numbers before exiting.
